@@ -1,6 +1,6 @@
-From node:8.17.0-alpine
+From node:10.23.1-alpine
 run mkdir /app
-Add . /app
+ADD . /app
 Workdir /app
 Run npm install
 CMD npm start
