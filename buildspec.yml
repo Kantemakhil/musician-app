@@ -4,7 +4,7 @@ phases:
     commands:
        - echo LOGGING INTO AMAZON ECR
        - aws --version
-       - $(aws ecr get-login --region ap-south-1 --no-include-email) 
+       - $(aws ecr get-login --region ap-south-1 --no-include-email)
        - API_REPOSITORY_URI=311206062661.dkr.ecr.ap-south-1.amazonaws.com/test2
   build:
     commands:
