@@ -18,5 +18,5 @@ phases:
         - echo Build completed on 'date'
         - printf '[{"name":"emrdevfargate-api","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
     artifacts:
-        files:'imagedefinitions.json'
+        files: imagedefinitions.json
    
