@@ -1,22 +1,24 @@
 version: 0.2
 phases:
-    pre_build:
-      commands:
-        - echo LOGGING INTO AMAZON ECR
+  install:
+    runtime-versions:
+      dotnet: 3.1
+  pre_build:
+    commands:
+      - echo LOGGING INTO AMAZON ECR
         - aws --version
         - $(aws ecr get-login --region ap-south-1 --no-include-email) 
         - API_REPOSITORY_URI=311206062661.dkr.ecr.ap-south-1.amazonaws.com/test2
-    build:
-      commands:
-        - echo Build started on 'date'
-        - docker build -t $API_REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER --tag $API_REPOSITORY_URI:latest .
-    post_build:
-      commands:
-        - echo Pushing the Docker Sample NodeJs
-        - docker push $API_REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER
-        - docker push $API_REPOSITORY_URI:latest
-        - echo Build completed on 'date'
-        - printf '[{"name":"emrdevfargate-api","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
-  artifacts:
-     files: imagedefinitions.json
-   
+  build:
+    commands:
+      - echo Build started on 'date'
+      - docker build -t $API_REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER --tag $API_REPOSITORY_URI:latest .            
+  post_build:
+    commands:
+      - echo Pushing the Docker Sample NodeJs
+      - docker push $API_REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER
+      - docker push $API_REPOSITORY_URI:latest
+      - echo Build completed on 'date'
+      - printf '[{"name":"test2","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+artifacts:
+    files: imagedefinitions.json
