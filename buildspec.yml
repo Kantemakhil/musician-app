@@ -17,6 +17,6 @@ phases:
         - docker push $API_REPOSITORY_URI:latest
         - echo Build completed on 'date'
         - printf '[{"name":"emrdevfargate-api","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
-    artifacts:
-        files: imagedefinitions.json
+ artifacts:
+     files: imagedefinitions.json
    
