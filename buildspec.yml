@@ -16,6 +16,6 @@ phases:
        - docker push $API_REPOSITORY_URI:latest
        - docker push $API_REPOSITORY_URI:latest
        - echo Build completed on 'date'
-       - printf '[{"name":"emrdevfargate-api","imageUri":"311206062661.dkr.ecr.ap-south-1.amazonaws.com/test2:latest"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+       - printf '[{"name":"My-musician-app","imageUri":"311206062661.dkr.ecr.ap-south-1.amazonaws.com/test2:latest"}]' $REPOSITORY_URI:latest > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
