@@ -16,6 +16,6 @@ phases:
        - docker push $API_REPOSITORY_URI:latest
        - docker push $API_REPOSITORY_URI:latest
        - echo Build completed on 'date'
-       - printf '[{"name":"hello-world","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+       - printf '[{"name":"My-musician-app","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
