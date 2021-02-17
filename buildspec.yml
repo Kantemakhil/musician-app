@@ -14,8 +14,8 @@ phases:
     commands:
        - echo Pushing the Docker Sample NodeJs
        - docker push $API_REPOSITORY_URI:latest
-       - docker push $API_REPOSITORY_URI:latest
+       - docker push $API_REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER
        - echo Build completed on 'date'
-       - printf '[{"name":"latest","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+       - printf '[{"name":"Musician-app","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
