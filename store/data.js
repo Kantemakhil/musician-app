@@ -12,6 +12,12 @@ module.exports = {
     genre: 'Rock',
   },
 
+  davis1: {
+    firstName: 'Akhil',
+    lastName: 'Kantem',
+    genre: 'Rock',
+  },
+
   mccartney: {
     firstName: 'Paul',
     lastName: 'McCartney',
