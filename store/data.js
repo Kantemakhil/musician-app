@@ -13,8 +13,8 @@ module.exports = {
   },
 
   davis1: {
-    firstName: 'Akhil',
-    lastName: 'Kantem',
+    firstName: 'Smith',
+    lastName: 'Paul',
     genre: 'Rock',
   },
 
