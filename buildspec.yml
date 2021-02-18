@@ -16,6 +16,6 @@ phases:
        - docker push $API_REPOSITORY_URI:latest
        - docker push $API_REPOSITORY_URI:$CODEBUILD_BUILD_NUMBER
        - echo Build completed on 'date'
-       - printf '[{"name":"TestContainer","imageUri":"%s"}]' $REPOSITORY_URI:latest > imagedefinitions.json
+       - printf '[{"name":"TestContainer","imageUri":"311206062661.dkr.ecr.ap-south-1.amazonaws.com/test2:latest"}]' > imagedefinitions.json
 artifacts:
     files: imagedefinitions.json
